@@ -16,7 +16,7 @@ const LeaveData = () => {
   useEffect(() => {
     const fetchLeaveData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/getFormData", {
+        const response = await fetch("https://final-attendance-leave-dashboard.onrender.com/api/getFormData", {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
@@ -87,7 +87,7 @@ const LeaveData = () => {
       return;
     }
 
-    const response = await fetch("http://localhost:5000/api/Approve-leave", {
+    const response = await fetch("https://final-attendance-leave-dashboard.onrender.com/api/Approve-leave", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
