@@ -79,7 +79,9 @@ const officeData = [
   { email: "yadavvaibhav893@gmail.com", name: "Vaibhav Yadav", empCode: "VY078", site: "Dimension Office Site Visit/डायमेंशन कार्यालय साइट विजिट" },
   { email: "nehamasani90@gmail.com", name: "Neha Masani", empCode: "NM079", site: "Dubey Ji Site/दुबे जी साइट" },
   { email: "shreyoshi.sanyal01@gmail.com", name: "Shreyoshi Sanyal", empCode: "SS080", site: "Dr. Shrikant Jain Site/डॉ. श्रीकांत जैन साइट" },
-  { email: "namanshukla79014@gmail.com", name: "Naman Shukla", empCode: "NS081", site: "Dr. Manish Jain Site/डॉ. मनीष जैन साइट" }
+  { email: "namanshukla79014@gmail.com", name: "Naman Shukla", empCode: "NS081", site: "Dr. Manish Jain Site/डॉ. मनीष जैन साइट" },
+  { email: "nandmehararti81@gmail.com", name: "Arti Nandmehar", empCode: "AN72", site: "Rcc Office/आरसीसी कार्यालय" },
+  
 ];
 
 export default officeData;
