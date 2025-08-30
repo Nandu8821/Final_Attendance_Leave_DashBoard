@@ -87,7 +87,8 @@
   { name: "Asif Sheikh", leaveApprovalManager: "Sameer Gupta", empCode: "AS086" },
   { name: "Janmjay Sinotiya", leaveApprovalManager: "Ravindra Singh", empCode: "JS087" },
   { name: "Ashok Pandey", leaveApprovalManager: "", empCode: "AP088" },
-  { name: "Aakriti Soni", leaveApprovalManager: "", empCode: "AS089" }
+  { name: "Aakriti Soni", leaveApprovalManager: "", empCode: "AS089" },
+  { name: "Arti Nandmehar",leaveApprovalManager: "Subhash Patidar",empCode: "AN72" },
 ]
 
 
