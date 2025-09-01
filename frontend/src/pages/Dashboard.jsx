@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { User, LogOut, Menu, X, Home, Bell, Search, CheckCircle, Calendar } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Profile from "../components/Profile";
 import LeaveData from "../components/LeaveData";
 import AttendanceData from "../components/AttendanceData";
+import Employees from "../components/Employees";
 
 const Dashboard = () => {
   const [currentPage, setCurrentPage] = useState("dashboard");
@@ -15,7 +15,7 @@ const Dashboard = () => {
   const [sidebarHovered, setSidebarHovered] = useState(false);
   const navigate = useNavigate();
   const isAdmin = localStorage.getItem("userType") === "Admin";
-  const ManagerName =  localStorage.getItem("userType")
+  const ManagerName = localStorage.getItem("userType");
 
   const handleLogout = () => {
     setIsLoggedOut(true);
@@ -23,6 +23,7 @@ const Dashboard = () => {
   };
 
   const menuItems = [
+    { id: "employees", name: "Employees", icon: User }, // Moved to top
     ...(isAdmin ? [{
       id: "dashboard",
       name: "Attendance Data",
@@ -33,7 +34,7 @@ const Dashboard = () => {
       icon: Home,
     }]),
     { id: "leave", name: "Leave Data", icon: Calendar },
-    { id: "profile", name: "Profile", icon: User },
+    // Removed "profile" button
   ];
 
   const renderContent = () => {
@@ -49,6 +50,8 @@ const Dashboard = () => {
             <p className="text-gray-600">Welcome to your dashboard!</p>
           </div>
         );
+      case "employees":
+        return  <Employees />;
       default:
         return null;
     }

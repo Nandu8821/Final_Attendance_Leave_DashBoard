@@ -646,7 +646,88 @@ app.post("/api/Approve-leave", async (req, res) => {
   }
 });
 
+// ///////////////////////////////////   Get Employees Data ////////////////////////////////
 
+
+app.get("/api/getEmployees", async (req, res) => {
+  try {
+    // Fetch data from the Google Sheet
+    const response = await sheets.spreadsheets.values.get({
+      spreadsheetId: process.env.SPREADSHEET_ID,
+      range: "ALL DOER NAMES RCC/DIMENSION!A:G", // Adjust 'Sheet1' to your sheet name, e.g., 'ALL DOER NAMES RCC/DIMENSION'
+    });
+
+    const rows = response.data.values || [];
+    console.log("Raw rows fetched:", rows);
+
+    if (!rows.length) {
+      return res.status(404).json({ error: "No data found in the sheet" });
+    }
+
+    // Define the expected headers
+    const headers = [
+      "Names",
+      "EMP Code",
+      "Mobile No.",
+      "Email",
+      "Leave Approval Manager",
+      "Department",
+      "Designation",
+    ];
+    console.log("Using headers:", headers);
+
+    // Validate headers from the first row
+    const sheetHeaders = rows[0] || [];
+    console.log("Headers from sheet (row 1):", sheetHeaders);
+
+    // Check if sheet headers match expected headers (optional validation)
+    const normalizedSheetHeaders = sheetHeaders.map((h) => h?.trim() || "");
+    if (
+      normalizedSheetHeaders.length !== headers.length ||
+      !headers.every((h, i) => h === normalizedSheetHeaders[i])
+    ) {
+      console.warn("Sheet headers do not match expected headers. Using predefined headers.");
+    }
+
+    // Get data rows (starting from row 2)
+    const dataRows = rows.slice(1);
+    console.log("Data rows (from row 2):", dataRows);
+
+    if (!dataRows.length) {
+      return res.status(404).json({ error: "No data found starting from row 2" });
+    }
+
+    // Map data rows to objects using the predefined headers
+    const formData = dataRows
+      .map((row) => {
+        if (!row || row.length === 0) return null;
+        const obj = {};
+        headers.forEach((header, index) => {
+          obj[header] = row[index] ? row[index].trim() : "";
+        });
+        return obj;
+      })
+      .filter((obj) => obj !== null);
+
+    console.log("Form data before filtering:", formData);
+
+    // Filter out rows where all values are empty
+    const finalFormData = formData.filter((obj) =>
+      Object.values(obj).some((value) => value !== "")
+    );
+
+    console.log("Final form data:", finalFormData);
+
+    if (finalFormData.length === 0) {
+      return res.status(404).json({ error: "No valid data found starting from row 2" });
+    }
+
+    return res.json({ data: finalFormData });
+  } catch (error) {
+    console.error("Error fetching data from Google Sheet:", error.message, error.stack);
+    return res.status(500).json({ error: "Server error: Failed to fetch data" });
+  }
+});
 
 
 
