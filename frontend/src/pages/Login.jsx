@@ -60,8 +60,8 @@ const Login = () => {
 
       <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl w-full max-w-md border border-white/20 relative z-10">
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-            <Lock className="w-8 h-8 text-white" />
+          <div className="w-16 h-16 bg-white  rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <img src='rcc-logo.png'/>
           </div>
           <h2 className="text-3xl font-bold text-white mb-2">Welcome Back</h2>
           <p className="text-white/70">Sign in to your account</p>

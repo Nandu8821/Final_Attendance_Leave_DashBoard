@@ -94,7 +94,9 @@ const Dashboard = () => {
             ${sidebarHovered ? "justify-between" : "lg:justify-center"}`}
           >
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex-shrink-0"></div>
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-white rounded-2xl mb-4 shadow-lg">
+                <img src="rcc-logo.png" />
+              </div>
               <h1
                 className={`text-xl font-bold text-gray-800 transition-all duration-300 whitespace-nowrap
                 ${sidebarHovered ? "lg:opacity-100" : "lg:opacity-0 lg:w-0 lg:overflow-hidden"}`}

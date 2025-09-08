@@ -213,18 +213,18 @@ const LeaveApplicationForm = () => {
   const today = new Date().toISOString().split("T")[0];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 to-blue-800 p-4 flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-800  p-4 flex items-center justify-center">
       <div className="w-full max-w-2xl mx-auto">
         {/* Header */}
         <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-t-2xl p-6 text-center text-white">
           <div className="flex items-center justify-center gap-3 mb-2">
-            <FileText className="w-8 h-8" />
+           <img src="rcc-logo.png" className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl mb-4 shadow-lg"/>
             <h1 className="text-2xl md:text-3xl font-bold">
               Leave Request Form
             </h1>
           </div>
           <p className="text-sm md:text-base text-blue-100">
-            📝 Leave request कम से कम 3 दिन पहले डालना ज़रूरी है।
+             Leave request कम से कम 3 दिन पहले डालना ज़रूरी है।
             <br />
             सिर्फ emergency leave को ही same day पर approve किया जाएगा।
           </p>

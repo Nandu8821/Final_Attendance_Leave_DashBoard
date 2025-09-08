@@ -485,7 +485,7 @@ function AttendanceForm() {
       ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-4 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-800 py-4 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
         {/* Success Notification */}
         {showSuccess && (
@@ -520,13 +520,13 @@ function AttendanceForm() {
 
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
-            <Calendar className="w-8 h-8 text-white" />
+          <div >
+            <img src="rcc-logo.png"  className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl mb-4 shadow-lg"/>
           </div>
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-            Attendance Portal
+          <h1 className="text-3xl font-bold text-white text-transparent">
+            Attendance Form
           </h1>
-          <p className="text-gray-600 mt-2">Mark your attendance with ease</p>
+          <p className=" text-white mt-2">Mark your attendance with ease</p>
         </div>
 
         {/* Status Cards */}
